@@ -3,19 +3,19 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="shortcut icon" type="image/x-icon" href="/fastpages-test/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Title | fastpages</title>
+<title>Azure PowerShell VM Visualization demo | fastpages</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Title" />
+<meta property="og:title" content="Azure PowerShell VM Visualization demo" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="summary" />
-<meta property="og:description" content="summary" />
+<meta name="description" content="A Notebook mixing Azure PowerShell and Plotly" />
+<meta property="og:description" content="A Notebook mixing Azure PowerShell and Plotly" />
 <link rel="canonical" href="https://tylerleonhardt.github.io/fastpages-test/2020/03/03/Azure-PowerShell-VM-Visualization-Demo.html" />
 <meta property="og:url" content="https://tylerleonhardt.github.io/fastpages-test/2020/03/03/Azure-PowerShell-VM-Visualization-Demo.html" />
 <meta property="og:site_name" content="fastpages" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-03-03T00:00:00-06:00" />
 <script type="application/ld+json">
-{"mainEntityOfPage":{"@type":"WebPage","@id":"https://tylerleonhardt.github.io/fastpages-test/2020/03/03/Azure-PowerShell-VM-Visualization-Demo.html"},"description":"summary","@type":"BlogPosting","url":"https://tylerleonhardt.github.io/fastpages-test/2020/03/03/Azure-PowerShell-VM-Visualization-Demo.html","headline":"Title","dateModified":"2020-03-03T00:00:00-06:00","datePublished":"2020-03-03T00:00:00-06:00","@context":"https://schema.org"}</script>
+{"mainEntityOfPage":{"@type":"WebPage","@id":"https://tylerleonhardt.github.io/fastpages-test/2020/03/03/Azure-PowerShell-VM-Visualization-Demo.html"},"description":"A Notebook mixing Azure PowerShell and Plotly","@type":"BlogPosting","url":"https://tylerleonhardt.github.io/fastpages-test/2020/03/03/Azure-PowerShell-VM-Visualization-Demo.html","headline":"Azure PowerShell VM Visualization demo","dateModified":"2020-03-03T00:00:00-06:00","datePublished":"2020-03-03T00:00:00-06:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
@@ -74,13 +74,13 @@
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Title</h1><p class="page-description">summary</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-03-03T00:00:00-06:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Azure PowerShell VM Visualization demo</h1><p class="page-description">A Notebook mixing Azure PowerShell and Plotly</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-03-03T00:00:00-06:00" itemprop="datePublished">
         Mar 3, 2020
       </time>
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -118,13 +118,6 @@
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Azure-PowerShell-VM-Visualization-demo-">Azure PowerShell VM Visualization demo <img align="right" src="https://raw.githubusercontent.com/PowerShell/PowerShell/master/assets/Powershell_black_64.png" /><a class="anchor-link" href="#Azure-PowerShell-VM-Visualization-demo-">&#182;</a></h1><h2 id="Prerequisites">Prerequisites<a class="anchor-link" href="#Prerequisites">&#182;</a></h2><p>You'll need to install <code>Az.Compute</code> for this Notebook.</p>
-
-</div>
-</div>
-</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -132,7 +125,7 @@
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Install</span><span class="o">-</span><span class="n">Module</span> <span class="n">Az</span><span class="o">.</span><span class="n">Compute</span> <span class="o">-</span><span class="n">Force</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Install</span><span class="o">-</span><span class="n">Module</span> <span class="n">Az</span><span class="o">.</span><span class="n">Compute</span><span class="p">,</span><span class="n">Az</span><span class="o">.</span><span class="n">Resources</span> <span class="o">-</span><span class="n">Force</span>
 </pre></div>
 
     </div>
@@ -160,7 +153,7 @@
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>First connect to your Azure account.</p>
+<h3 id="Authenticate-and-set-context">Authenticate and set context<a class="anchor-link" href="#Authenticate-and-set-context">&#182;</a></h3><p>First connect to your Azure account.</p>
 
 </div>
 </div>
@@ -185,7 +178,7 @@
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-yellow-intense-fg">WARNING: To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code ESEQGS95X to authenticate.</span>
+<pre><span class="ansi-yellow-intense-fg">WARNING: To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code EGLUE983V to authenticate.</span>
 
 Account                SubscriptionName TenantId                             Environment
 -------                ---------------- --------                             -----------
@@ -216,6 +209,202 @@ tyleonha@microsoft.com Thanks Microsoft 72f988bf-86f1-41af-91ab-2d7cd011db47 Azu
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Set</span><span class="o">-</span><span class="n">AzContext</span> <span class="o">-</span><span class="n">Subscription</span> <span class="s2">&quot;My Subscription&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="(Optional)-Populate-Azure-with-test-VMs">(Optional) Populate Azure with test VMs<a class="anchor-link" href="#(Optional)-Populate-Azure-with-test-VMs">&#182;</a></h3><p>Here's a script that will create a number of VMs. Feel free to change the value at the top.
+<div class="flash">
+    <svg class="octicon octicon-info" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 01-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 01-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z" /></svg>
+    <strong>Note: </strong>This can take a LONG time.
+</div></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># IMPORTANT VARIABLES</span>
+<span class="err">$</span><span class="n">RESOURCE_GROUP_NAME</span> <span class="o">=</span> <span class="s1">&#39;VMVisDemo&#39;</span>
+<span class="err">$</span><span class="n">LOCATION</span> <span class="o">=</span> <span class="s1">&#39;East US 2&#39;</span>
+<span class="err">$</span><span class="n">NUM_OF_VMs</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="err">$</span><span class="n">USER_CREDENTIAL</span> <span class="o">=</span> <span class="n">Get</span><span class="o">-</span><span class="n">Credential</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+<span class="ansi-magenta-intense-fg">PowerShell credential request</span>
+Enter your credentials.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Write</span><span class="o">-</span><span class="n">Host</span> <span class="s2">&quot;Creting resource group.&quot;</span>
+<span class="n">New</span><span class="o">-</span><span class="n">AzResourceGroup</span> <span class="o">-</span><span class="n">Name</span> <span class="err">$</span><span class="n">RESOURCE_GROUP_NAME</span> <span class="o">-</span><span class="n">Location</span> <span class="err">$</span><span class="n">LOCATION</span> <span class="o">|</span> <span class="n">Out</span><span class="o">-</span><span class="n">Null</span>
+
+<span class="n">Write</span><span class="o">-</span><span class="n">Host</span> <span class="s2">&quot;Creting VMs.&quot;</span>
+<span class="err">$</span><span class="n">jobs</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">.</span><span class="err">$</span><span class="n">NUM_OF_VMs</span> <span class="o">|</span> <span class="n">ForEach</span><span class="o">-</span><span class="n">Object</span> <span class="p">{</span>
+    <span class="err">$</span><span class="n">splat</span> <span class="o">=</span> <span class="o">@</span><span class="p">{</span>
+        <span class="n">Image</span> <span class="o">=</span> <span class="s2">&quot;UbuntuLTS&quot;</span>
+        <span class="n">Location</span> <span class="o">=</span> <span class="err">$</span><span class="n">LOCATION</span>
+        <span class="n">Name</span> <span class="o">=</span> <span class="s2">&quot;MyVM-$_&quot;</span>
+        <span class="n">ResourceGroupName</span> <span class="o">=</span> <span class="err">$</span><span class="n">RESOURCE_GROUP_NAME</span>
+        <span class="n">Credential</span> <span class="o">=</span> <span class="err">$</span><span class="n">USER_CREDENTIAL</span>
+        <span class="n">AsJob</span> <span class="o">=</span> <span class="err">$</span><span class="n">true</span>
+    <span class="p">}</span>
+    <span class="n">New</span><span class="o">-</span><span class="n">AzVM</span> <span class="nd">@splat</span>
+<span class="p">}</span>
+
+<span class="c1"># Wait for them to all be created</span>
+<span class="n">Wait</span><span class="o">-</span><span class="n">Job</span> <span class="err">$</span><span class="n">jobs</span> <span class="o">|</span> <span class="n">Out</span><span class="o">-</span><span class="n">Null</span>
+<span class="s2">&quot;Done!&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Creting resource group.
+Creting VMs.
+Done!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now we need to randomly stop a number of them so that the graph below has some variance.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="err">$</span><span class="n">numOfVMsToStop</span> <span class="o">=</span> <span class="n">Get</span><span class="o">-</span><span class="n">Random</span> <span class="o">-</span><span class="n">Minimum</span> <span class="mi">2</span> <span class="o">-</span><span class="n">Maximum</span> <span class="err">$</span><span class="n">NUM_OF_VMs</span>
+<span class="n">Write</span><span class="o">-</span><span class="n">Host</span> <span class="s2">&quot;Randomly stoping $numOfVMsToStop VMs.&quot;</span>
+
+<span class="err">$</span><span class="n">vms</span> <span class="o">=</span> <span class="n">Get</span><span class="o">-</span><span class="n">AzVM</span> <span class="o">-</span><span class="n">ResourceGroupName</span> <span class="err">$</span><span class="n">RESOURCE_GROUP_NAME</span>
+<span class="err">$</span><span class="n">jobs</span> <span class="o">=</span> <span class="k">for</span> <span class="p">(</span><span class="err">$</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="err">$</span><span class="n">i</span> <span class="o">-</span><span class="n">lt</span> <span class="err">$</span><span class="n">numOfVMsToStop</span><span class="p">;</span> <span class="err">$</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="err">$</span><span class="n">vms</span> <span class="o">|</span> <span class="n">Get</span><span class="o">-</span><span class="n">Random</span> <span class="o">|</span> <span class="n">Stop</span><span class="o">-</span><span class="n">AzVM</span> <span class="o">-</span><span class="n">Force</span> <span class="o">-</span><span class="n">AsJob</span>
+<span class="p">}</span>
+
+<span class="n">Wait</span><span class="o">-</span><span class="n">Job</span> <span class="err">$</span><span class="n">jobs</span> <span class="o">|</span> <span class="n">Out</span><span class="o">-</span><span class="n">Null</span>
+
+<span class="n">Write</span><span class="o">-</span><span class="n">Host</span> <span class="s2">&quot;Done!&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Randomly stoping 4 VMs.
+Done!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Cleanup</strong> - If you wanna clean up these test VMs. Run this:
+<div class="flash">
+    <svg class="octicon octicon-info octicon octicon-info" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 01-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 01-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z" /></svg>
+    <strong>Note: </strong>This can take a LONG time.
+</div></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Write</span><span class="o">-</span><span class="n">Host</span> <span class="s2">&quot;Deleting VMs.&quot;</span>
+<span class="err">$</span><span class="n">jobs</span> <span class="o">=</span> <span class="n">Get</span><span class="o">-</span><span class="n">AzVM</span> <span class="o">-</span><span class="n">ResourceGroupName</span> <span class="err">$</span><span class="n">RESOURCE_GROUP_NAME</span> <span class="o">|</span> <span class="n">Remove</span><span class="o">-</span><span class="n">AzVM</span> <span class="o">-</span><span class="n">AsJob</span> <span class="o">-</span><span class="n">Force</span>
+<span class="n">Wait</span><span class="o">-</span><span class="n">Job</span> <span class="err">$</span><span class="n">jobs</span> <span class="o">|</span> <span class="n">Out</span><span class="o">-</span><span class="n">Null</span>
+
+<span class="n">Write</span><span class="o">-</span><span class="n">Host</span> <span class="s2">&quot;Deleting resource group.&quot;</span>
+<span class="n">Remove</span><span class="o">-</span><span class="n">AzResourceGroup</span> <span class="o">-</span><span class="n">ResourceGroupName</span> <span class="err">$</span><span class="n">RESOURCE_GROUP_NAME</span> <span class="o">-</span><span class="n">Force</span> <span class="o">|</span> <span class="n">Out</span><span class="o">-</span><span class="n">Null</span>
+
+<span class="n">Write</span><span class="o">-</span><span class="n">Host</span> <span class="s2">&quot;Done!&quot;</span>
 </pre></div>
 
     </div>
@@ -260,8 +449,8 @@ tyleonha@microsoft.com Thanks Microsoft 72f988bf-86f1-41af-91ab-2d7cd011db47 Azu
 <pre>
 Count Name                      Group
 ----- ----                      -----
-    4 VM deallocated            {VM deallocated, VM deallocated, VM deallocated, VM deallocated}
-    4 VM running                {VM running, VM running, VM running, VM running}
+    7 VM deallocated            {VM deallocated, VM deallocated, VM deallocated, VM deallocated…}
+   10 VM running                {VM running, VM running, VM running, VM running…}
 
 </pre>
 </div>
@@ -307,16 +496,16 @@ Count Name                      Group
 
 
 <div class="output_html rendered_html output_subarea ">
-<div id="49ef0402-25d4-457c-953f-c36cece477a8" style="width: 900px; height: 500px;"></div>
+<div id="3e285da6-0c05-457f-92dc-0007cc9b95fd" style="width: 900px; height: 500px;"></div>
 <script type="text/javascript">
 
 var renderPlotly = function() {
     var xplotRequire = requirejs.config({context:'xplot-3.0.1',paths:{plotly:'https://cdn.plot.ly/plotly-1.49.2.min'}});
     xplotRequire(['plotly'], function(Plotly) {
 
-            var data = [{"type":"pie","labels":["VM deallocated","VM running"],"values":[4,4],"name":"VM PowerState"}];
+            var data = [{"type":"pie","labels":["VM deallocated","VM running"],"values":[7,10],"name":"VM PowerState"}];
             var layout = {"title":"VM Status"};
-            Plotly.newPlot('49ef0402-25d4-457c-953f-c36cece477a8', data, layout);
+            Plotly.newPlot('3e285da6-0c05-457f-92dc-0007cc9b95fd', data, layout);
         
 });
 };
